@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Encodage des caractères -->
+    <meta charset="UTF-8">
+    
+    <!-- Configuration pour les appareils mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Titre de la page -->
+    <title>LassinaQualiSol - Paramètres du sol</title>
+    
+    <!-- Framework CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bibliothèque d'icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fichier de styles personnalisés -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Police Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- En-tête du site -->
+    <header class="navbar-fixe">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo du site -->
+                <a href="../index.html">
+                    <img src="../images/logo-projet.jpg" alt="Logo LassinaQualiSol" class="logo">
+                </a>
+                
+                <!-- Barre de navigation -->
+                <div class="barre-navigation">
+                    <span class="slogan">Saisissez vos paramètres de sol</span>
+                </div>
+                
+                <!-- Menu de navigation -->
+                <nav>
+                    <a href="../index.html" class="lien-nav" title="Retour à l'accueil">
+                        <i class="fas fa-home me-2"></i>
+                        Accueil
+                    </a>
+                    <a href="parameter.html" class="lien-nav active" title="Page actuelle">
+                        <i class="fas fa-flask me-2"></i>
+                        Analyser
+                    </a>
+                    <a href="resultat.html" class="lien-nav" title="Voir résultats précédents">
+                        <i class="fas fa-chart-bar me-2"></i>
+                        Résultats
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- En-tête de section -->
+                <div class="text-center mb-5">
+                    <h2 class="police-oswald mb-3">Analyse de la qualité de votre sol</h2>
+                    <p class="sous-titre">
+                        Veuillez saisir les valeurs des paramètres de votre sol afin que LassinaQualiSol puisse analyser sa qualité. Une fois les données renseignées, la plateforme calculera automatiquement un score global et vous fournira des recommandations adaptées pour améliorer la fertilité de votre sol.
+                    </p>
+                </div>
+
+                <!-- Formulaire de saisie des paramètres -->
+                <form id="formulaire-parametres-sol">
+                    <div class="row">
+                        <!-- Colonne de gauche : pH, Humidité, Température -->
+                        <div class="col-md-6">
+                            <!-- Carte pour le pH -->
+                            <div class="carte-parametre">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-vial me-2"></i>
+                                    pH du sol
+                                </h5>
+                                
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="ph" placeholder="pH" min="3" max="10" step="0.1" required>
+                                    <label for="ph">Valeur du pH (3-10)</label>
+                                </div>
+
+                                <!-- La balise small est une balise generalement utilisé pour afficher des infos secondaires-->
+                                <small class="texte-secondaire">  
+                                    Plage optimale: 6.2 - 7.2
+                                </small>
+                            </div>
+
+                            <!-- Carte pour l'humidité -->
+                            <div class="carte-parametre">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-tint me-2"></i>
+                                    Humidité
+                                </h5>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="humidite" placeholder="Humidité" min="0" max="100" required>
+                                    <label for="humidite">Pourcentage d'humidité (0-100%)</label>
+                                </div>
+
+                                <small class="texte-secondaire">
+                                    Plage optimale: 30% - 60%
+                                </small>
+                            </div>
+
+                            <!-- Carte pour la température -->
+                            <div class="carte-parametre">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-thermometer-half me-2"></i>
+                                    Température
+                                </h5>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="temperature" placeholder="Température" min="-10" max="60" required>
+                                    <label for="temperature">Température en °C (-10°C - 60°C)</label>
+                                </div>
+
+                                <small class="texte-secondaire">
+                                    Plage optimale: 15°C - 30°C
+                                </small>
+                            </div>
+                        </div>
+
+                        <!-- Colonne de droite : Azote, Phosphore, Potassium -->
+                        <div class="col-md-6">
+                            <!-- Carte pour l'azote -->
+                            <div class="carte-parametre">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-atom me-2"></i>
+                                    Azote (N)
+                                </h5>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="azote" placeholder="Azote" min="0" max="200" required>
+                                    <label for="azote">Taux d'azote (0-200 mg/kg)</label>
+                                </div>
+
+                                <small class="texte-secondaire">
+                                    Plage optimale: 20-50 mg/kg
+                                </small>
+                            </div>
+
+                            <!-- Carte pour le phosphore -->
+                            <div class="carte-parametre">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-fire me-2"></i>
+                                    Phosphore (P)
+                                </h5>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="phosphore" placeholder="Phosphore" min="0" max="150" required>
+                                    <label for="phosphore">Taux de phosphore (0-150 mg/kg)</label>
+                                </div>
+
+                                <small class="texte-secondaire">
+                                    Plage optimale: 30-50 mg/kg
+                                </small>
+                            </div>
+
+                            <!-- Carte pour le potassium -->
+                            <div class="carte-parametre">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-bolt me-2"></i>
+                                    Potassium (K)
+                                </h5>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="potassium" placeholder="Potassium" min="0" max="600" required>
+                                    <label for="potassium">Taux de potassium (0-600 mg/kg)</label>
+                                </div>
+
+                                <small class="texte-secondaire">
+                                    Plage optimale: 120-200 mg/kg
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Boutons d'action -->
+                    <div class="row mt-4">
+                        <div class="col-6 text-center">
+                            <button type="reset" class="btn btn-secondaire btn-lg px-4">
+                                <i class="fas fa-redo me-2"></i>
+                                Réinitialiser
+                            </button>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <button type="submit" class="btn btn-principal btn-lg px-4">
+                                <i class="fas fa-chart-bar me-2"></i>
+                                Voir les résultats
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <!-- Section logo -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <a href="../index.html">
+                        <img src="../images/logo-projet.jpg" alt="Logo LassinaQualiSol" class="logo">
+                    </a>
+                </div>
+                
+                <!-- Section contact -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="police-oswald">Contact</h5>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>lassbakkeita6@gmail.com</p>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i>+212 615531182</p>
+                    <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Montfleurie 2</p>
+                </div>
+                
+                <!-- Section réseaux sociaux -->
+                <div class="col-md-4">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">  
+                         <!--Ce style permet d'aligner correctement le titre h5 avec les blocs d'images -->
+                        <h5 class="police-oswald">Réseaux sociaux</h5>
+
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="https://www.linkedin.com/in/lassina-bakary-ke%C3%AFta-b28626370/"  target="_blank" class="icone-sociale">
+                                <img src="../images/logo-linkedln.jpg" alt="LinkedIn" style="width: 24px; height: 24px;">
+                            </a>
+                            <a href="#" class="icone-sociale">
+                                <img src="../images/logo-facebook.jpg" alt="Facebook" style="width: 24px; height: 24px;">
+                            </a>
+                            <a href="https://github.com/LassinaBakaryKeita" target="_blank" class="icone-sociale">
+                                <img src="../images/logo-github.jpeg" alt="GitHub" style="width: 24px; height: 24px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Séparateur -->
+            <hr class="my-4 separateur-footer">
+            
+            <!-- Copyright -->
+            <p class="mb-0">©2025 LassinaQualiSol – développé par Lassina Bakary Keïta</p>
+        </div>
+    </footer>
+
+    <!-- Les Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/parameters.js"></script>
+</body>
+</html>

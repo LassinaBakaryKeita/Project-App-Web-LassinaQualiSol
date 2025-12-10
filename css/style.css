@@ -1,0 +1,471 @@
+/* ============================================
+   FICHIER DE STYLES PRINCIPAL
+   Auteur: Lassina Bakary Keïta
+   Version: 3.0 - Version française
+   ============================================ */
+
+/* Variables CSS pour une gestion facile des couleurs */
+:root {
+    --couleur-principale: #2e6e3a;        /* Vert foncé */
+    --couleur-secondaire: #74422d;        /* Brun terre */
+    --couleur-accent: #F1916D;            /* Orange saumon */
+    --couleur-claire: #f4ead8;            /* Beige clair */
+    --couleur-foncee: #333;               /* Noir pour texte */
+    --couleur-succes: #28a745;            /* Vert succès */
+    --couleur-avertissement: #ffc107;     /* Jaune avertissement */
+    --couleur-danger: #dc3545;            /* Rouge danger */
+    --couleur-texte-secondaire: #6c757d;  /* Gris pour texte secondaire */
+    /* --couleur-secondaire: #d5835f;     */
+}
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux du corps */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--couleur-claire);
+    color: var(--couleur-foncee);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+/* Classe pour la police Oswald */
+.police-oswald {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Styles de l'en-tête */
+header {
+    background-color: var(--couleur-secondaire);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    position: sticky;      /* Reste visible quand on scroll */
+    top: 0;                /* S'accroche en haut */
+    z-index: 1000;         /* Au-dessus du contenu */
+   
+}
+
+
+
+/* Styles de la barre de navigation */
+.barre-navigation {
+    flex-grow: 1;  /* L'element prend tout l'espace disponible de son conteneur flexible */
+    text-align: center;
+    margin: 0 20px;
+}
+
+.slogan {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: var(--couleur-accent);
+    text-transform: uppercase;  /* met tout le texte en majuscule */
+    letter-spacing: 1px;   /*Met un espacement de 1 pixel entre chacune des lettre du texte */ 
+}
+
+/* Styles du menu de navigation */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.lien-nav {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.lien-nav:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.lien-nav.active {
+    background-color: var(--couleur-accent);
+    color: white;
+}
+
+/* Styles du pied de page */
+footer {
+    background-color: var(--couleur-secondaire);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Styles du logo */
+.logo {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Styles de la section héros */
+.section-hero {
+    background: linear-gradient(rgba(46, 110, 58, 0.8), rgba(116, 66, 45, 0.8));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titre-anime {
+    animation: pulsation 2s infinite;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.sous-titre {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styles des cartes */
+.carte {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background: white;
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.corps-carte {
+    padding: 25px;
+}
+
+/* Carte avec bordure dégradée */
+.carte-bordure-degrade {
+    background: linear-gradient(135deg, var(--couleur-accent), var(--couleur-secondaire), var(--couleur-principale));
+    padding: 3px;
+    border-radius: 15px;
+}
+
+.carte-bordure-degrade .corps-carte {
+    background: white;
+    border-radius: 12px;
+    height: 100%;
+}
+
+.texte-carte {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--couleur-foncee);
+}
+
+/* Styles des boutons */
+.btn-principal {
+    background-color: var(--couleur-accent);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(241, 145, 109, 0.3);
+}
+
+.btn-principal:hover {
+    background-color: var(--couleur-secondaire);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(116, 66, 45, 0.4);
+    color: white;
+}
+
+.btn-secondaire {
+    background-color: transparent;
+    border: 2px solid var(--couleur-texte-secondaire);
+    color: var(--couleur-texte-secondaire);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secondaire:hover {
+    background-color: var(--couleur-texte-secondaire);
+    color: white;
+    border-color: var(--couleur-texte-secondaire);
+}
+
+/* Styles des formulaires */
+.form-control {
+    border-radius: 10px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-control:focus {
+    border-color: var(--couleur-accent);
+    box-shadow: 0 0 0 0.2rem rgba(241, 145, 109, 0.25);
+}
+
+
+/* Cartes de paramètres */
+.carte-parametre {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.carte-parametre:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.texte-secondaire {
+    color: var(--couleur-texte-secondaire);
+    font-size: 0.9rem;
+}
+
+/* Barres de progression */
+.progression {
+    height: 25px;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.barre-progression {
+    border-radius: 12px;
+    transition: width 1s ease-in-out;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Score de résultat */
+.score-resultat {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--couleur-principale);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cartes de conseil */
+.conseil-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--couleur-accent);
+    animation: apparition 0.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.conseil-item:nth-child(1) { animation-delay: 0.1s; }
+.conseil-item:nth-child(2) { animation-delay: 0.2s; }
+.conseil-item:nth-child(3) { animation-delay: 0.3s; }
+.conseil-item:nth-child(4) { animation-delay: 0.4s; }
+.conseil-item:nth-child(5) { animation-delay: 0.5s; }
+.conseil-item:nth-child(6) { animation-delay: 0.6s; }
+
+
+/* Modal d'authentification */
+.modal-authentification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal-authentification.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.formulaire-authentification {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal-authentification.active .formulaire-authentification {
+    transform: translateY(0);
+}
+
+
+/* Champs avec icônes */
+.champ-avec-icone {
+    position: relative;
+}
+
+.champ-avec-icone i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--couleur-texte-secondaire);
+}  
+
+.champ-avec-icone input {
+    padding-left: 45px;
+}
+
+/* Connexion via réseaux sociaux */
+.connexion-reseaux-sociaux {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.icone-sociale {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icone-sociale:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Séparateur du footer */
+.separateur-footer {
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Liens texte */
+.lien-texte {
+    color: var(--couleur-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lien-texte:hover {
+    color: var(--couleur-secondaire);
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes pulsation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .logo {
+        width: 60px;
+    }
+    
+    .barre-navigation {
+        display: none;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .section-hero {
+        padding: 40px 15px;
+    }
+    
+    .titre-anime {
+        font-size: 2rem;
+    }
+    
+    .sous-titre {
+        font-size: 1rem;
+    }
+    
+    .score-resultat {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carte-bordure-degrade {
+        padding: 2px;
+    }
+    
+    .corps-carte {
+        padding: 15px;
+    }
+    
+    .btn-principal, .btn-secondaire {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
