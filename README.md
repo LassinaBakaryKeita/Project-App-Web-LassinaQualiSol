@@ -75,13 +75,7 @@ LassinaQualiSol est une application web complète qui analyse six paramètres es
 - **Google Fonts** → Polices Montserrat et Oswald pour une typographie élégante
 
 ### **Structure du projet**
-
-
-
-
-
-
-
+<img width="710" height="630" alt="image" src="https://github.com/user-attachments/assets/462f843a-14dd-4716-aede-902e39f5e144" />
 
 ### **Fonctionnalités JavaScript par fichier**
 
@@ -141,8 +135,8 @@ LassinaQualiSol est une application web complète qui analyse six paramètres es
 
 L'application évalue six paramètres essentiels avec des plages optimales précises :
 
-| Paramètre | Plage possible | Plage optimale | Unité | Icône |
-|-----------|----------------|----------------|-------|-------|
+| Paramètre | Plage possible | Plage optimale | Unité  | Icône |
+|-----------|----------------|----------------|------- |-------|
 | **pH du sol** | 3 - 10 | 6.2 - 7.2 | - | fa-vial |
 | **Humidité** | 0 - 100% | 30 - 60% | % | fa-tint |
 | **Température** | -10 - 60°C | 15 - 30°C | °C | fa-thermometer-half |
